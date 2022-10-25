@@ -19,7 +19,13 @@
 }
 .buttons {
 /*     text-align: center; */
-    padding: 20px;
+    padding: 5px;
+}
+.prev {
+    left: -25px;
+}
+.next{
+    right: -25px; 
 }
 .next, .prev {
     font-size: 20px;
@@ -27,8 +33,18 @@
     background-color: rgb(171, 254, 233);
     padding: 7px;
     border-radius: 10px;
+    position: absolute;
 }
 .next:hover, .prev:hover {
     color: rgb(0, 34, 26);
     background-color: rgb(63, 255, 207);
+}
+.container {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
 }
