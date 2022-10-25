@@ -18,7 +18,7 @@
     transition: all ease 1s;
 }
 .buttons {
-    text-align: center;
+/*     text-align: center; */
     padding: 20px;
 }
 .next, .prev {
