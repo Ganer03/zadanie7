@@ -12,7 +12,7 @@ document.querySelector('.container .buttons .next').addEventListener('click', fu
 document.querySelector('.container .buttons .prev').addEventListener('click', function() {
     offset -= 300;
     if (offset < 0) {
-        offset = 3800;
+        offset = 3600;
     }
     sliderLine.style.left = -offset + 'px';
 })
