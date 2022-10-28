@@ -16,11 +16,11 @@ body {
 }
 
 .dot {
-    fill:rgb(87, 254, 238);
+    fill:rgb(107, 4, 238);
 }
 
 .active-dot {
-    fill:rgb(24, 52, 49);
+    fill:rgb(104, 1002, 9);
     transform: scale(1.4);
 }
 
