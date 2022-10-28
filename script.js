@@ -20,7 +20,7 @@ function init(){
     
     let slides = document.querySelectorAll(".slide");
 
-    for(let i = 1; i < slides.length; i++){
+    for(let i = 1; i <= slides.length; i++){
       if(i%count==0)
         document.querySelector(".dots").appendChild(dot.cloneNode(true));
     }
