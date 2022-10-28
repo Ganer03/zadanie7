@@ -37,10 +37,14 @@ function init(){
   updateView();
 }
 function back_slide(){
+  if (window.outerWidth <= 425){
+      count = mobile_count;
+    }
+  
   let slider = document.querySelector(".slides");
-  let last_slide = slider.querySelector('.slide:last-child');
-  last_slide.remove();
-  slider.insertBefore(last_slide, slider.querySelector('.slide'));
+  let first_slide = slider.querySelector('.slide:first-child');
+  first_slide.remove();
+  slider.insertBefore(first_slide, slider.querySelector('.slide'));
 
   document.querySelectorAll(".slide.active").forEach(element => element.classList.remove('active'));
 
@@ -50,41 +54,35 @@ function back_slide(){
   }
 
   let dots = document.querySelectorAll(".dot");
-  
+  let p;
   let last_active_dot;
-  for(let i = 0; i < dots.length - 1; i++){
-    if (dots[i].classList.contains("active-dot") && !dots[i + 1].classList.contains("active-dot")){
+  for(let i = 0; i < dots.length; i++){
+    if (dots[i].classList.contains("active-dot")){
       last_active_dot = dots[i];
+      p=i;
       break;
     }
   }
-  let first_active_dot;
-  for(let i = dots.length - 1; i > 0; i--){
-    if (dots[i].classList.contains("active-dot") && !dots[i - 1].classList.contains("active-dot")){
-      console.log(i);
-      first_active_dot = dots[i];
-      break;
-    }
+  if(p==0){
+    dots[dots.length-1].classList.add("active-dot");
   }
-
-  if (last_active_dot){
-    last_active_dot.classList.remove("active-dot");
-  } else {
-    dots[dots.length - 1].classList.remove("active-dot");
+  else{
+    dots[p-1].classList.add("active-dot");
   }
-
-  if (first_active_dot && first_active_dot.previousElementSibling){
-    first_active_dot.previousElementSibling.classList.add("active-dot");
-  } else {
-    dots[dots.length - 1].classList.add("active-dot");
-  }
+  last_active_dot.classList.remove("active-dot");
 }
 
 function forward_slide(){
+  if (window.outerWidth <= 425){
+      count = mobile_count;
+    }
+  
   let slider = document.querySelector(".slides");
-  let first_slide = slider.querySelector('.slide');
-  first_slide.remove();
-  slider.appendChild(first_slide);
+  for(let i=0;i<Math.min(count, slides.length); i++){
+    let slide_n = slider.querySelector('.slide');
+    slide_n.remove();
+    slider.appendChild(slide_n);
+  }
 
   document.querySelectorAll(".slide.active").forEach(element => element.classList.remove('active'));
 
@@ -94,34 +92,22 @@ function forward_slide(){
   }
 
   let dots = document.querySelectorAll(".dot");
-  
+  let p;
   let last_active_dot;
-  for(let i = 0; i < dots.length - 1; i++){
-    if (dots[i].classList.contains("active-dot") && !dots[i + 1].classList.contains("active-dot")){
+  for(let i = 0; i < dots.length; i++){
+    if (dots[i].classList.contains("active-dot")){
       last_active_dot = dots[i];
+      p=i;
       break;
     }
   }
-  let first_active_dot;
-  for(let i = dots.length - 1; i > 0; i--){
-    if (dots[i].classList.contains("active-dot") && !dots[i - 1].classList.contains("active-dot")){
-      console.log(i);
-      first_active_dot = dots[i];
-      break;
-    }
-  }
-
-  if (last_active_dot && last_active_dot.nextElementSibling){
-    last_active_dot.nextElementSibling.classList.add("active-dot");
-  } else {
+  if(p+1==dots.length){
     dots[0].classList.add("active-dot");
   }
-
-  if (first_active_dot){
-    first_active_dot.classList.remove("active-dot");
-  } else {
-    dots[0].classList.remove("active-dot");
+  else{
+    dots[p+1].classList.add("active-dot");
   }
+  last_active_dot.classList.remove("active-dot");
 }
 
 window.addEventListener("DOMContentLoaded", init);
