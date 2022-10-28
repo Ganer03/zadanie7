@@ -20,16 +20,17 @@ function init(){
     
     let slides = document.querySelectorAll(".slide");
 
-    for(let i = 0; i < slides.length; i++){
-      document.querySelector(".dots").appendChild(dot.cloneNode(true));
+    for(let i = 1; i < slides.length; i++){
+      if(i%count==0)
+        document.querySelector(".dots").appendChild(dot.cloneNode(true));
     }
 
     let dots = document.querySelectorAll(".dot");
 
     for(let i = 0; i < Math.min(count, slides.length); i++){
       slides[i].classList.add('active');
-      dots[i].classList.add('active-dot');
     }
+    dots[0].classList.add('active-dot');
     resize();
   }
 
