@@ -17,11 +17,11 @@ function init(){
     }
     document.querySelectorAll(".slide.active").forEach(element => element.classList.remove('active'));
     document.querySelectorAll(".dot").forEach(element => element.remove());
-    
+
     let slides = document.querySelectorAll(".slide");
 
     for(let i = 1; i <= slides.length; i++){
-      if(i%count==0)
+      if(i%count===0)
         document.querySelector(".dots").appendChild(dot.cloneNode(true));
     }
 
@@ -40,7 +40,7 @@ function back_slide(){
   if (window.outerWidth <= 425){
       count = mobile_count;
     }
-  
+  let slides = document.querySelectorAll(".slide");
   for(let i=0;i<Math.min(count, slides.length); i++){
     let last_slide = slider.querySelector('.slide:last-child');
     last_slide.remove();
@@ -49,7 +49,7 @@ function back_slide(){
 
   document.querySelectorAll(".slide.active").forEach(element => element.classList.remove('active'));
 
-  let slides = document.querySelectorAll(".slide");
+  slides = document.querySelectorAll(".slide");
   for(let i = 0; i < Math.min(count, slides.length); i++){
     slides[i].classList.add('active');
   }
@@ -64,7 +64,7 @@ function back_slide(){
       break;
     }
   }
-  if(p==0){
+  if(p===0){
     dots[dots.length-1].classList.add("active-dot");
   }
   else{
@@ -77,7 +77,8 @@ function forward_slide(){
   if (window.outerWidth <= 425){
       count = mobile_count;
     }
-  
+    
+  let slides = document.querySelectorAll(".slide");
   let slider = document.querySelector(".slides");
   for(let i=0;i<Math.min(count, slides.length); i++){
     let slide_n = slider.querySelector('.slide');
@@ -87,7 +88,7 @@ function forward_slide(){
 
   document.querySelectorAll(".slide.active").forEach(element => element.classList.remove('active'));
 
-  let slides = document.querySelectorAll(".slide");
+  slides = document.querySelectorAll(".slide");
   for(let i = 0; i < Math.min(count, slides.length); i++){
     slides[i].classList.add('active');
   }
@@ -102,7 +103,7 @@ function forward_slide(){
       break;
     }
   }
-  if(p+1==dots.length){
+  if(p+1===dots.length){
     dots[0].classList.add("active-dot");
   }
   else{
@@ -120,3 +121,4 @@ function ready() {
 }
 
 document.addEventListener("DOMContentLoaded",ready);
+
