@@ -40,6 +40,7 @@ function back_slide(){
   if (window.outerWidth <= 425){
       count = mobile_count;
     }
+  let slider = document.querySelector(".slides");
   let slides = document.querySelectorAll(".slide");
   for(let i=0;i<Math.min(count, slides.length); i++){
     let last_slide = slider.querySelector('.slide:last-child');
