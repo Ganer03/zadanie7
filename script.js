@@ -41,10 +41,11 @@ function back_slide(){
       count = mobile_count;
     }
   
-  let slider = document.querySelector(".slides");
-  let first_slide = slider.querySelector('.slide:first-child');
-  first_slide.remove();
-  slider.insertBefore(first_slide, slider.querySelector('.slide'));
+  for(let i=0;i<Math.min(count, slides.length); i++){
+    let last_slide = slider.querySelector('.slide:last-child');
+    last_slide.remove();
+    slider.insertBefore(last_slide, slider.querySelector('.slide'));
+  }
 
   document.querySelectorAll(".slide.active").forEach(element => element.classList.remove('active'));
 
