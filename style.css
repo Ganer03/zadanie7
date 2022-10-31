@@ -3,14 +3,8 @@ body {
     margin: auto;
 }
 
-.back, .forward {
-	background: none;
-	color:rgb(87, 254, 238);
-	cursor: pointer;
-}
-
 .content {
-    padding: 10px;
+    padding: 5px;
     max-width: 960px;
     margin: auto;
 }
@@ -41,8 +35,8 @@ body {
 }
 
 .slide {
-    height: 300px;
-    padding: 8px;
+    height: 280px;
+    padding: 6px;
     display: none;
 }
 
