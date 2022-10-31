@@ -9,6 +9,10 @@
         <script src="script.js" defer=""></script>
     </head>
     <body>
+        <div style="flex">
+                <button class="back" onclick="down()">
+                    <
+                </button>
         <div class="slider justify-content-center">
             <div class="slides">
                 <div class="slide col"><img src="https://fikiwiki.com/uploads/posts/2022-02/1644970646_1-fikiwiki-com-p-avto-krasivie-kartinki-1.jpg" alt=""></div>
@@ -28,19 +32,16 @@
                 <div class="slide col"><img src="https://fikiwiki.com/uploads/posts/2022-02/1644977446_7-fikiwiki-com-p-kartinki-krasivikh-mashin-9.jpg" alt=""></div>
                 <div class="slide col"><img src="https://paultan.org/image/2015/12/Etos_Exterior_High_015.jpg" alt=""></div>
             </div>
-            <div class="control">
-                <button class="back" onclick="down()">
-                    <
+            <button class="forward" onclick="up()">
+                    >
                 </button>
-                
+            </div>
+            <div class="control">
                 <div class="dotes">
                     <svg class="dot" version="1.1" xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">
                     <rect x="5" y="5"/>
                     </svg>
                 </div>
-                <button class="forward" onclick="up()">
-                    >
-                </button>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
