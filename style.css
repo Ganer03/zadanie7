@@ -3,6 +3,11 @@ body {
     margin: auto;
 }
 
+.switch{
+    display: flex;
+    align-items: center;
+}
+
 .content {
     padding: 5px;
     max-width: 960px;
