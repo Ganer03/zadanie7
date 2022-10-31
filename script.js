@@ -22,7 +22,7 @@ function init(){
 
     for(let i = 1; i <= slides.length; i++){
       if(i%count===0)
-        document.querySelector(".dots").appendChild(dot.cloneNode(true));
+        document.querySelector(".dotes").appendChild(dot.cloneNode(true));
     }
 
     let dots = document.querySelectorAll(".dot");
@@ -36,7 +36,7 @@ function init(){
 
   updateView();
 }
-function back_slide(){
+function down(){
   if (window.outerWidth <= 425){
       count = mobile_count;
     }
@@ -74,7 +74,7 @@ function back_slide(){
   last_active_dot.classList.remove("active-dot");
 }
 
-function forward_slide(){
+function up(){
   if (window.outerWidth <= 425){
       count = mobile_count;
     }
